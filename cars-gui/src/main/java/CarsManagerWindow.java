@@ -53,6 +53,21 @@ public class CarsManagerWindow extends JFrame {
         btnLoadFromFile.setSize(100, 50);
         add(btnLoadFromFile);
 
+        JButton btnRemoveCar = new JButton("Usuń");
+        btnRemoveCar.setLocation(10, 520);
+        btnRemoveCar.setSize(100, 50);
+        add(btnRemoveCar);
+
+        btnRemoveCar.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Car car = carJList.getSelectedValue();
+                carRepository.getCarList().remove(car);
+
+                updateCarListRepository();
+            }
+        });
+
         btnLoadFromFile.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
