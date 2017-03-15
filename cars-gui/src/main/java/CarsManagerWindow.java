@@ -14,6 +14,10 @@ public class CarsManagerWindow extends JFrame {
     private CarRepository carRepository;
     private JList<Car> carJList;
 
+    public CarRepository getCarRepository() {
+        return carRepository;
+    }
+
     public static void main(String[] args) {
         new CarsManagerWindow();
     }
@@ -30,7 +34,7 @@ public class CarsManagerWindow extends JFrame {
         carJList.setLocation(10, 10);
         add(carJList);
 
-        CarEditPanel carEditPanel = new CarEditPanel();
+        CarEditPanel carEditPanel = new CarEditPanel(this);
         carEditPanel.setLocation(300, 50);
         add(carEditPanel);
 
@@ -92,7 +96,7 @@ public class CarsManagerWindow extends JFrame {
         });
     }
 
-    private void updateCarListRepository() {
+    public void updateCarListRepository() {
         List<Car> carList = carRepository.getCarList();
 
         // ZAMIANA LISTY NA TABLICĘ

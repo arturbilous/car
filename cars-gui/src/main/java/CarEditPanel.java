@@ -16,7 +16,9 @@ public class CarEditPanel extends JPanel {
     private JButton btnAdd;
     private CarsManagerWindow window;
 
-    public CarEditPanel() throws HeadlessException {
+
+    public CarEditPanel(CarsManagerWindow window) throws HeadlessException {
+        this.window = window;
 
         setSize(300, 600);
         setBackground(Color.white);
@@ -75,7 +77,14 @@ public class CarEditPanel extends JPanel {
         btnAdd.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String brand = jTextFieldBrand.getText();
+                String model = jTextFieldModel.getText();
+                int manYear = Integer.parseInt(jTextFieldManYear.getText());
+                double power = Double.parseDouble(jTextFieldPower.getText());
 
+                Car car = new Car(brand, model, manYear, power);
+                window.getCarRepository().getCarList().add(car);
+                window.updateCarListRepository();
             }
         });
 
@@ -90,6 +99,7 @@ public class CarEditPanel extends JPanel {
                 editedCar.setPower(Double.parseDouble(jTextFieldPower.getText()));
 
                 window.repaint();
+
             }
         });
     }
