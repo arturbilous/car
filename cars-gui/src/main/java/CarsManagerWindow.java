@@ -23,39 +23,49 @@ public class CarsManagerWindow extends JFrame {
     }
 
     public CarsManagerWindow() throws HeadlessException {
-        setTitle("Cars manager");
+        setTitle("Manager aut");
         setVisible(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setSize(600, 600);
+        setSize(500, 550);
         setLayout(null);
+
+        JLabel labelTxtField = new JLabel("Lista Twoich samochodów");
+        labelTxtField.setLocation(10,10);
+        labelTxtField.setSize(200,15);
+        add(labelTxtField);
 
         carJList = new JList<Car>();
         carJList.setSize(200, 300);
-        carJList.setLocation(10, 10);
+        carJList.setLocation(10, 30);
         add(carJList);
 
+        JLabel labelEditPanel = new JLabel("Edytor samochodów");
+        labelEditPanel.setLocation(230,10);
+        labelEditPanel.setSize(200, 15);
+        add(labelEditPanel);
+
         CarEditPanel carEditPanel = new CarEditPanel(this);
-        carEditPanel.setLocation(300, 50);
+        carEditPanel.setLocation(230, 30);
         add(carEditPanel);
 
-        JButton jButton = new JButton("Wczytaj");
-        jButton.setLocation(300, 0);
-        jButton.setSize(100, 50);
+        JButton jButton = new JButton("Wczytaj z repozytorium");
+        jButton.setLocation(10, 335);
+        jButton.setSize(170, 25);
         add(jButton);
 
-        JButton btnSaveToFile = new JButton("Zapisz w plik");
-        btnSaveToFile.setLocation(410, 0);
-        btnSaveToFile.setSize(100, 50);
-        add(btnSaveToFile);
-
         JButton btnLoadFromFile = new JButton("Wczytaj z pliku");
-        btnLoadFromFile.setLocation(520, 0);
-        btnLoadFromFile.setSize(100, 50);
+        btnLoadFromFile.setLocation(10, 365);
+        btnLoadFromFile.setSize(170, 25);
         add(btnLoadFromFile);
 
-        JButton btnRemoveCar = new JButton("Usuń");
-        btnRemoveCar.setLocation(10, 520);
-        btnRemoveCar.setSize(100, 50);
+        JButton btnSaveToFile = new JButton("Zapisz do pliku");
+        btnSaveToFile.setLocation(10, 395);
+        btnSaveToFile.setSize(170, 25);
+        add(btnSaveToFile);
+
+        JButton btnRemoveCar = new JButton("Usuń z listy");
+        btnRemoveCar.setLocation(10, 435);
+        btnRemoveCar.setSize(170, 25);
         add(btnRemoveCar);
 
         btnRemoveCar.addActionListener(new AbstractAction() {

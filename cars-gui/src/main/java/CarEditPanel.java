@@ -20,58 +20,58 @@ public class CarEditPanel extends JPanel {
     public CarEditPanel(CarsManagerWindow window) throws HeadlessException {
         this.window = window;
 
-        setSize(300, 600);
+        setSize(220, 300);
         setBackground(Color.white);
         setLayout(null);
 
         JLabel jLabelBrand = new JLabel("Marka");
-        jLabelBrand.setSize(200, 100);
-        jLabelBrand.setLocation(10, 50);
+        jLabelBrand.setSize(200, 15);
+        jLabelBrand.setLocation(10, 10);
         add(jLabelBrand);
 
         jTextFieldBrand = new JTextField();
-        jTextFieldBrand.setSize(150, 50);
-        jTextFieldBrand.setLocation(10, 110);
+        jTextFieldBrand.setSize(150, 25);
+        jTextFieldBrand.setLocation(10, 30);
         add(jTextFieldBrand);
 
         JLabel jLabelModel = new JLabel("Model");
-        jLabelModel.setSize(200, 100);
-        jLabelModel.setLocation(10, 150);
+        jLabelModel.setSize(200, 15);
+        jLabelModel.setLocation(10, 65);
         add(jLabelModel);
 
         jTextFieldModel = new JTextField();
-        jTextFieldModel.setSize(150, 50);
-        jTextFieldModel.setLocation(10, 210);
+        jTextFieldModel.setSize(150, 25);
+        jTextFieldModel.setLocation(10, 85);
         add(jTextFieldModel);
 
         JLabel jLabelManYear = new JLabel("Rok produkcji");
-        jLabelManYear.setSize(200, 100);
-        jLabelManYear.setLocation(10, 250);
+        jLabelManYear.setSize(200, 15);
+        jLabelManYear.setLocation(10, 120);
         add(jLabelManYear);
 
         jTextFieldManYear = new JTextField();
-        jTextFieldManYear.setSize(150, 50);
-        jTextFieldManYear.setLocation(10, 310);
+        jTextFieldManYear.setSize(150, 25);
+        jTextFieldManYear.setLocation(10, 140);
         add(jTextFieldManYear);
 
         JLabel jLabelPower = new JLabel("Moc");
-        jLabelPower.setSize(200, 100);
-        jLabelPower.setLocation(10, 350);
+        jLabelPower.setSize(200, 15);
+        jLabelPower.setLocation(10, 175);
         add(jLabelPower);
 
         jTextFieldPower = new JTextField();
-        jTextFieldPower.setSize(150, 50);
-        jTextFieldPower.setLocation(10, 410);
+        jTextFieldPower.setSize(150, 25);
+        jTextFieldPower.setLocation(10, 195);
         add(jTextFieldPower);
 
-        jButtonSave = new JButton("Zapisz");
-        jButtonSave.setSize(100, 50);
-        jButtonSave.setLocation(10, 480);
+        jButtonSave = new JButton("Zamień na liście");
+        jButtonSave.setSize(170, 25);
+        jButtonSave.setLocation(10, 235);
         add(jButtonSave);
 
-        btnAdd = new JButton("Dodaj");
-        btnAdd.setSize(100,50);
-        btnAdd.setLocation(110, 480);
+        btnAdd = new JButton("Dodaj do listy");
+        btnAdd.setSize(170,25);
+        btnAdd.setLocation(10, 265);
         add(btnAdd);
 
         btnAdd.addActionListener(new AbstractAction() {
